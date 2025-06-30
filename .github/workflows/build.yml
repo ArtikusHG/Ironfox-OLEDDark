@@ -22,8 +22,7 @@ jobs:
 
       - name: Get latest Ironfox release version
         run: |
-          echo "BUILD_VERSION=$(curl -s https://fdroid.ironfoxoss.org/fdroid/repo/index-v1.json | jq -r '.packages.\"org.ironfoxoss.ironfox\"[0].versionName')" >> $GITHUB_ENV
-
+          echo "BUILD_VERSION=$(curl -s https://gitlab.com/api/v4/projects/ironfox-oss%2FIronFox/releases | jq -r '.[0].tag_name')" >> $GITHUB_ENV
       - name: Check if latest version was already built
         if: false
         run: |
