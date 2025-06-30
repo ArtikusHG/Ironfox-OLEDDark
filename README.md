@@ -46,8 +46,3 @@ patched_signed.apk
 - AMOLED patch script: [ArtikusHG/Ironfox-OLEDDark](https://github.com/ArtikusHG/Ironfox-OLEDDark)
 - Original Ironfox browser: [ironfox-oss](https://gitlab.com/ironfox-oss)
 - ARMv7 fork & automation: [karanveers969](https://github.com/karanveers969)
-
----
-
-## ⚠️ Disclaimer
-Unofficial patch, not affiliated with Ironfox. Use at your own risk.
