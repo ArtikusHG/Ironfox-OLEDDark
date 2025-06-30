@@ -25,7 +25,7 @@ jobs:
           echo "BUILD_VERSION=$(curl -s https://fdroid.ironfoxoss.org/fdroid/repo/index-v1.json | jq -r '.packages.\"org.ironfoxoss.ironfox\"[0].versionName')" >> $GITHUB_ENV
 
       - name: Check if latest version was already built
-        if: ${{ steps.getLatest.outputs.tag_name == env.BUILD_VERSION }}
+        if: false
         run: |
           echo latest version already built and released
           exit -1
