@@ -47,9 +47,14 @@ jobs:
           apksigner sign --ks keystore.jks --ks-pass pass:${{ secrets.KEYSTORE_PASSPHRASE }} patched_signed.apk
 
       - name: Get release notes
-        run: |
-          RELEASE_NOTES=$(curl -s https://gitlab.com/api/v4/projects/ironfox-oss%2FIronFox/releases/v$BUILD_VERSION | jq -r .description | sed '/## Checksums/,/This release was automatically generated/d')
-          echo "$RELEASE_NOTES" >> $GITHUB_ENV
+  run: |
+    echo 'RELEASE_NOTES<<EOF' >> $GITHUB_ENV
+    curl -s https://gitlab.com/api/v4/projects/ironfox-oss%2FIronFox/releases/v$BUILD_VERSION \
+      | jq -r .description \
+      | sed '/## Checksums/,/This release was automatically generated/d' \
+      >> $GITHUB_ENV
+    echo 'EOF' >> $GITHUB_ENV
+
 
       - name: Publish release
         uses: softprops/action-gh-release@v1
