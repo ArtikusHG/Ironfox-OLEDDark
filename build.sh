@@ -10,7 +10,7 @@ wget -q https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/lin
 chmod +x apktool*
 
 rm -rf patched patched_signed.apk
-./apktool d latest.apk -o patched 
+./apktool d latest.apk -o patched
 rm -rf patched/META-INF
 
 sed -i 's/<color name="fx_mobile_layer_color_1">.*/<color name="fx_mobile_layer_color_1">#ff000000<\/color>/g' patched/res/values-night/colors.xml
@@ -26,7 +26,7 @@ sed -i 's/eeeeee/e3e3e3/g' patched/assets/extensions/readerview/readerview.css
 sed -i 's/mipmap\/ic_launcher_round/drawable\/ic_launcher_foreground/g' patched/res/drawable-v23/splash_screen.xml
 sed -i 's/160\.0dip/200\.0dip/g' patched/res/drawable-v23/splash_screen.xml
 
-./apktool b patched -o patched.apk --use-aapt2
+./apktool b patched -o patched.apk
 
 zipalign 4 patched.apk patched_signed.apk
 rm -rf patched patched.apk
