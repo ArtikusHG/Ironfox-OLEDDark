@@ -1,3 +1,5 @@
+# No longer maintained since v147, since Ironfox added an OLED theme upstream! The code can still be used as a reference for adding an OLED theme to other versions of Firefox, so I'll keep it in public archive. Thanks everyone for your contributions and using this project!
+
 # Ironfox-OLEDDark (previously Mull-OLEDDark)
 Mull is no longer maintained, this now uses Ironfox as the base. All releases starting from 134.0.1 are Ironfox-based.
 
